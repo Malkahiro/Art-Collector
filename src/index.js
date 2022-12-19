@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 // These imports won't work until you fix ./components/index.js
-import { Feature, Loading, Preview, Search, Title } from "./components";
+import { Loading, Title, Search } from "./components";
 
 function App() {
   /**
@@ -16,15 +16,12 @@ function App() {
 
   return (
     <div className="app">
-      {/* vvv Delete this once you see your app is running vvv */}
-      <h1 style={{ fontSize: "100px", color: "white" }}>Hello World</h1>
-      {/* ^^^ Delete this once you see your app is running ^^^ */}
 
       {/* <Title /> is static, doesn't need any props */}
-      {/* <Title /> */}
+      <Title />
 
       {/* <Search /> needs props for setIsLoading and setSearchResults (trigger <Loading /> on search start/end, and transfer results to preview) */}
-      {/* <Search /> */}
+      <Search setIsLoading={setIsLoading} setSearchResults={setSearchResults} />
 
       {/* <Preview /> needs props for searchResults, setIsLoading and setSearchResults (clicking prev/next buttons), and setFeaturedResult (clicking a preview) */}
       {/* <Preview /> */}
@@ -34,7 +31,7 @@ function App() {
 
       {/* <Loading /> is static, but should only render when isLoading is true */}
       {/* use a ternary and render null if isLoading is false */}
-      {/* <Loading />  */}
+      <Loading /> 
     </div>
   );
 }
